@@ -4,7 +4,6 @@ import routes from './routes/index';
 const app = express();
 const port = 3000;
 
-// استخدام الراوتر الجديد (كل المسارات ستبدأ بـ /api)
 app.use('/api', routes);
 
 app.get('/', (req, res) => {

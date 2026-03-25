@@ -2,7 +2,6 @@ import resizeImage from '../utilities/imageProcessor';
 
 describe('Test image processing utility', () => {
   it('should resolve and not throw an error with valid input', async () => {
-    // نختبر الدالة مباشرة
     const result = await resizeImage('fjord', 100, 100);
     expect(result).not.toBeNull();
   });

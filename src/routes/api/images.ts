@@ -10,7 +10,6 @@ images.get('/', async (req: Request, res: Response): Promise<void> => {
   const width = parseInt(req.query.width as string);
   const height = parseInt(req.query.height as string);
 
-  // 1. التحقق من المدخلات (Error Handling)
   if (!filename || isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
     res.status(400).send('Please provide a valid filename, width, and height.');
     return;
@@ -20,16 +19,13 @@ images.get('/', async (req: Request, res: Response): Promise<void> => {
   const thumbPath = path.resolve(__dirname, `../../../assets/thumb/${filename}-${width}x${height}.jpg`);
 
   try {
-    // 2. التحقق من وجود الصورة الأصلية
     await fs.access(fullPath);
 
-    // 3. تطبيق الـ Caching (هل الصورة المصغرة موجودة بالفعل؟)
     try {
       await fs.access(thumbPath);
       console.log('Serving from cache...');
       res.sendFile(thumbPath);
     } catch {
-      // 4. إذا لم تكن موجودة، نقوم بمعالجتها
       console.log('Resizing new image...');
       const result = await resizeImage(filename, width, height);
       if (result) {
