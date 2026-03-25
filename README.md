@@ -23,6 +23,8 @@ A production-ready Image Processing API built with **Node.js**, **Express**, and
 Install all dependencies (including development tools like TypeScript, ESLint, and Jasmine):
 ```bash
 npm install
+bash```
+
 ### 2. Available Scripts
 - `npm run build`: Compiles TypeScript files into the `dist` directory.
 - `npm start`: Starts the production server (runs the compiled JS from `dist`).
