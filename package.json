@@ -4,11 +4,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "build": "npx tsc",
-    "jasmine": "jasmine",
-    "test": "npm run build && jasmine",
-    "lint": "eslint \"src/**/*.ts\"",
-    "format": "prettier --write \"src/**/*.ts\""
+  "build": "npx tsc",
+  "jasmine": "jasmine",
+  "test": "npm run build && jasmine",
+  "lint": "eslint src/**/*.ts",
+  "format": "prettier --write src/**/*.ts"  
   },
   "keywords": [],
   "author": "",
@@ -26,7 +26,7 @@
     "@types/supertest": "^7.2.0",
     "@typescript-eslint/eslint-plugin": "^8.57.2",
     "@typescript-eslint/parser": "^8.57.2",
-    "eslint": "^9.39.4",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "jasmine": "^6.1.0",

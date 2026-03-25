@@ -18,4 +18,13 @@ describe('Test endpoint responses', () => {
     const response = await request.get('/api/images?filename=unknown&width=200&height=200');
     expect(response.status).toBe(404);
   });
+
+  it('returns 400 if width is not a number (e.g. 500f)', async () => {
+  const response = await request.get('/api/images?filename=fjord&width=500f&height=200');
+  expect(response.status).toBe(400);
+});
+it('returns 400 if width is 0 or negative', async () => {
+  const response = await request.get('/api/images?filename=fjord&width=-200&height=200');
+  expect(response.status).toBe(400);
+});
 });
